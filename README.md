@@ -160,6 +160,64 @@ Main_Switch(config-line)#exit
 Main_Switch(config)#service password-encryption
 
 ```
+### Configuring Telnet
+
+1. Enter Global Configuration Mode:
+
+```console
+BUR_Main_SW#configure terminal
+```
+
+2. Enable Telnet on the VTY Lines:
+
+```console
+Main_Switch(config)#line vty 0 4 
+```
+
+3. Enter the Password:
+
+```console
+Main_Switch(config-line)#password <password>
+Main_Switch(config-line)#login
+```
+To access the switch via Telnet, open Command Prompt, and type telnet ```ip address```, replacing ```ip address``` with the switch's IP address. Enter the password when prompted to gain access.
+
+### Saving the Configuration
+
+1.	To save the current running configuration:
+
+```console
+Main_Switch#copy running-config startup-config
+Destination filename [startup-config]?
+Building configuration...
+[OK]
+Main_Switch#
+```
+
+2. Alternatively, use these commands:
+
+```console
+Main_Switch#copy run start
+Destination filename [startup-config]?
+Building configuration...
+[OK]
+Main_Switch#wr
+Building configuration...
+[OK]
+```
+3. If you are in configuration mode, you can use the do command to save without exiting:
+
+```console
+Main_Switch(config)#do copy running-config startup-config
+Destination filename [startup-config]?
+Building configuration...
+[OK]
+Main_Switch(config)#do wr
+Building configuration...
+[OK]
+```
+
+Always make sure you save your configurations after making changes to prevent loss of settings after a reboot.
 
 ### Creating VLANs
 
