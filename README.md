@@ -65,7 +65,7 @@ Main_Switch#disable
 Main_Switch>
 ```
 
-I partially typed a command and then hit the “Tab” key, which completes the command for me.
+> I partially typed a command and then hit the `Tab` key, which completes the command for me.
 
 ### Set the Hostname
 
@@ -180,7 +180,7 @@ Main_Switch(config)#line vty 0 4
 Main_Switch(config-line)#password <password>
 Main_Switch(config-line)#login
 ```
-To access the switch via Telnet, open Command Prompt, and type telnet ```ip address```, replacing ```ip address``` with the switch's IP address. Enter the password when prompted to gain access.
+> To access the switch via Telnet, open Command Prompt, and type telnet `ip address`, replacing `ip address` with the switch's IP address. Enter the password when prompted to gain access.
 
 ### Saving the Configuration
 
@@ -217,7 +217,7 @@ Building configuration...
 [OK]
 ```
 
-Always make sure you save your configurations after making changes to prevent loss of settings after a reboot.
+> Always make sure you save your configurations after making changes to prevent loss of settings after a reboot.
 
 ### Adding another User for SSH Access
 
@@ -240,6 +240,56 @@ Main_Switch(config)#username scott secret cisco
 ```console
 Main_Switch(config)#ip ssh version 2
 ```
+
+### Checking Interface Status
+
+1. To check the status of interfaces, use:
+
+```console
+Main_Switch#show ip interface brief
+```
+
+2.	If you want to troubleshoot connectivity or check if specific interfaces are active, this command is extremely useful. If you notice an interface is “administratively down”, you can enable it using:
+
+```console
+Main_Switch#configure terminal
+Main_Switch(config)#interface FastEthernet0/2
+Main_Switch(config-if)#no shutdown
+```
+3.	When you run the ```show ip interface brief```, you will see output similar to this:
+
+```console
+Interface              IP-Address      OK? Method Status                Protocol 
+FastEthernet0/1        unassigned      YES manual up                    up 
+FastEthernet0/2        unassigned      YES manual up                    up 
+FastEthernet0/3        unassigned      YES manual administratively down down 
+FastEthernet0/4        unassigned      YES manual administratively down down 
+FastEthernet0/5        unassigned      YES manual administratively down down 
+FastEthernet0/6        unassigned      YES manual administratively down down 
+FastEthernet0/7        unassigned      YES manual administratively down down 
+FastEthernet0/8        unassigned      YES manual administratively down down 
+FastEthernet0/9        unassigned      YES manual administratively down down 
+FastEthernet0/10       unassigned      YES manual up                    up 
+FastEthernet0/11       unassigned      YES manual up                    up 
+FastEthernet0/12       unassigned      YES manual up                    up 
+FastEthernet0/13       unassigned      YES manual administratively down down 
+FastEthernet0/14       unassigned      YES manual administratively down down 
+FastEthernet0/15       unassigned      YES manual administratively down down 
+FastEthernet0/16       unassigned      YES manual administratively down down 
+FastEthernet0/17       unassigned      YES manual administratively down down 
+FastEthernet0/18       unassigned      YES manual administratively down down 
+FastEthernet0/19       unassigned      YES manual administratively down down 
+FastEthernet0/20       unassigned      YES manual administratively down down 
+FastEthernet0/21       unassigned      YES manual administratively down down 
+FastEthernet0/22       unassigned      YES manual administratively down down 
+FastEthernet0/23       unassigned      YES manual administratively down down 
+FastEthernet0/24       unassigned      YES manual administratively down down 
+GigabitEthernet0/1     unassigned      YES manual up                    up 
+GigabitEthernet0/2     unassigned      YES manual up                    up 
+Vlan1                  10.9.100.10     YES manual up                    up
+```
+
+> Using the `show ip interface brief` command will provide a quick overview of the operational status of all interfaces on the Switch, making it easier to identify issues related to connectivity or interface configurations.
 
 ### Creating VLANs
 
@@ -276,3 +326,26 @@ BUR_SW_1(config)#exit
 ```console
 BUR_SW_1#show vlan brief
 ```
+
+6.	When you run the command ```show vlan brief```, you’ll see a summary of all configured VLANs on the switch.
+
+```console
+BUR_SW_1#show vlan brief
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Fa0/2, Fa0/3, Fa0/4, Fa0/5
+                                                Fa0/6, Fa0/7, Fa0/8, Fa0/9
+                                                Fa0/13, Fa0/14, Fa0/16, Fa0/17
+                                                Fa0/18, Fa0/19, Fa0/20, Fa0/21
+                                                Fa0/22, Fa0/23, Gig0/1, Gig0/2
+70   STAFF                            active    Fa0/12
+80   STUDENTS                         active    Fa0/11
+90   GENERAL                          active    Fa0/10, Fa0/24
+100  WIFI                             active    Fa0/15
+1002 fddi-default                     active    
+1003 token-ring-default               active    
+1004 fddinet-default                  active    
+```
+
+> By following these steps, you can effectively create and assign VLANs on the switch. To confirm your configuration, always use the `show vlan brief` command to review your VLANs and their assigned ports.
