@@ -47,19 +47,19 @@ This project outlines the network configuration and operations for the College o
 
 1. Access Privileged Mode:
 
-```bash
+```terminal
 Main_Switch>enable
 ```
 
 2. Note the change in the prompt from > to #
 
-```bash
+```terminal
 Main_Switch#
 ```
 
 3. Exit and return to User Mode:
 
-```bash
+```terminal
 Main_Switch#disa
 Main_Switch#disable
 Main_Switch>
@@ -71,19 +71,19 @@ I partially typed a command and then hit the “Tab” key, which completes the 
 
 1. Enter Global Configuration Mode:
 
-```bash
+```terminal
 Main_Switch#configure terminal
 ```
 
 2. Set the Hostname:
 
-```bash
+```terminal
 Main_Switch(config)#hostname testing
 ```
 
 3. Confirm the Changes (note the hostname has changed to testing):
 
-```bash
+```terminal
 testing(config)#
 ```
 
@@ -91,26 +91,26 @@ testing(config)#
 
 1. Enter Global Configuration Mode:
 
-```bash
+```terminal
 Main_Switch#configure terminal
 ```
 
 2. Set the Banner:
 
-```bash
+```terminal
 Main_Switch(config)#banner motd +
 ```
 
 3. Enter the banner along with the delimiter:
 
-```bash
+```terminal
 Enter TEXT message.  End with the character '+'.
 Main_Switch says Hello World!+
 ```
 
 4. Confirm the Changes:
 
-```bash
+```terminal
 Press RETURN to get started!
 
 Main_Switch says Hello World!
@@ -120,13 +120,13 @@ Main_Switch says Hello World!
 
 1. Enter Global Configuration Mode:
 
-```bash
+```terminal
 Main_Switch#configure terminal
 ```
 
 2. Set the Enable Password:
 
-```bash
+```terminal
 Main_Switch(config)#enable secret <password>
 ```
 
@@ -134,19 +134,19 @@ Main_Switch(config)#enable secret <password>
 
 1. Enter Global Configuration Mode:
 
-```bash
+```terminal
 Main_Switch#configure terminal
 ```
 
 2. Enter Console Line Configuration:
 
-```bash
+```terminal
 Main_Switch#configure terminal
 ```
 
 3. Set the Password:
 
-```bash
+```terminal
 Main_Switch(config-line)#password <password>
 
 Main_Switch(config-line)#login
@@ -154,7 +154,7 @@ Main_Switch(config-line)#login
 
 4. Set the Service Password Encryption (Optional but Recommended):
 
-```bash
+```terminal
 Main_Switch(config-line)#exit
 
 Main_Switch(config)#service password-encryption
@@ -165,25 +165,25 @@ Main_Switch(config)#service password-encryption
 
 1. Enter Global Configuration Mode:
 
-```bash
+```terminal
 BUR_Main_SW#configure terminal
 ```
 
 2. Create a VLAN:
 
-```bash
+```terminal
 BUR_Main_SW(config)#vlan 100
 ```
 
 3. Name the VLAN:
 
-```bash
+```terminal
 BUR_Main_SW(config-vlan)#name WIFI
 ```
 
 4. Assign Ports to the VLAN:
 
-```bash
+```terminal
 BUR_SW_1#configure terminal
 BUR_SW_1(config)#interface FastEthernet0/15
 BUR_SW_1(config)#switchport mode access
@@ -193,6 +193,6 @@ BUR_SW_1(config)#exit
 
 5. Verify VLAN Configuration:
 
-```bash
+```terminal
 BUR_SW_1#show vlan brief
 ```
