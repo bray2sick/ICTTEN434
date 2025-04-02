@@ -219,6 +219,28 @@ Building configuration...
 
 Always make sure you save your configurations after making changes to prevent loss of settings after a reboot.
 
+### Adding another User for SSH Access
+
+1. Enter Global Configuration Mode:
+
+```console
+BUR_Main_SW#configure terminal
+```
+
+2. Create a New User:
+
+```console
+Main_Switch(config)#username scott secret cisco
+```
+
+3. Replace ```scott``` and ```cisco``` with your chosen username and password.
+
+5. Ensure that SSH is Enabled:
+
+```console
+Main_Switch(config)#ip ssh version 2
+```
+
 ### Creating VLANs
 
 1. Enter Global Configuration Mode:
