@@ -11,7 +11,7 @@ This project outlines the network configuration and operations for the College o
 - Port Security
 - Trunking (802.1Q)
 - Spanning Tree Protocol (STP)
-- Switch Configuration and Management
+- Switch Configuration
 - Routing and Subnetting
 - Wireless Access Points (WAPs)
 - DHCP Configuration
