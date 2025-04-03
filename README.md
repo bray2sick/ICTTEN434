@@ -23,7 +23,7 @@ This project outlines the network configuration and operations for the College o
 | Allocated IP Block | 10.9.0.0/16 | 
 | -------- | -------- |
 
-### Hobart Campus - LAN
+#### Hobart Campus - LAN
 
 | VLAN Name | VLAN # | Subnet Address | Subnet Mask | CIDR | # of Hosts | Usable Range | Broadcast Address |
 | -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- |
@@ -31,7 +31,7 @@ This project outlines the network configuration and operations for the College o
 | HBT_Students | <div align="center">20</div> | <div align="center">10.9.2.0/23</div> | <div align="center">255.255.254.0</div> | <div align="center">/23</div> | <div align="center">510</div> | <div align="center">10.9.2.1 - 10.9.3.254</div> | <div align="center">10.9.3.255</div> |
 | HBT_General | <div align="center">30</div>| <div align="center">10.9.4.0/24</div> | <div align="center">255.255.255.0</div> | <div align="center">/24</div> | <div align="center">254</div> | <div align="center">10.9.4.1 - 10.9.4.254</div> | <div align="center">10.9.4.255</div> |
 
-### Launceston Campus - LAN
+#### Launceston Campus - LAN
 
 | VLAN Name | VLAN # | Subnet Address | Subnet Mask | CIDR | # of Hosts | Usable Range | Broadcast Address |
 | -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- |
@@ -39,7 +39,7 @@ This project outlines the network configuration and operations for the College o
 | LAU_Students | <div align="center">50</div> | <div align="center">10.9.8.0/23</div> | <div align="center">255.255.254.0</div> | <div align="center">/23</div> | <div align="center">510</div> | <div align="center">10.9.8.1 - 10.9.9.254</div> | <div align="center">10.9.9.255</div> |
 | LAU_General | <div align="center">60</div> | <div align="center">10.9.10.0/24</div> | <div align="center">255.255.255.0</div> | <div align="center">/24</div> | <div align="center">254</div> | <div align="center">10.9.10.1 - 10.9.10.254</div> | <div align="center">10.9.10.255</div> |
 
-### Burnie Campus - LAN
+#### Burnie Campus - LAN
 
 | VLAN Name | VLAN # | Subnet Address | Subnet Mask | CIDR | # of Hosts | Usable Range | Broadcast Address |
 | -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- |
@@ -52,21 +52,51 @@ This project outlines the network configuration and operations for the College o
 | Allocated IP Block | 12.2.1.0/24 | 
 | -------- | -------- |
 
-### Serial WAN Links
-
-### Hobart Campus to Launceston Campus
+#### Hobart Campus to Launceston Campus
 
 | Subnet Address | Subnet Mask | CIDR | # of Hosts | Usable Range | Broadcast Address |
 | -------- | -------- | -------- | -------- | -------- | -------- |
 | <div align="center">12.1.1.0</div> | <div align="center">255.255.255.252</div> | <div align="center">/30</div> | <div align="center">2</div> | <div align="center">12.1.1.1 - 12.1.1.2</div> | <div align="center">12.1.1.3</div> |
 
-### Hobart Campus to Burnie Campus
+> Serial connection using HDLC, 1.544 Mb T1, clock rate at 64,000. (No PPP or CHAP authentication)
+
+#### Hobart Campus to Burnie Campus
 
 | Subnet Address | Subnet Mask | CIDR | # of Hosts | Usable Range | Broadcast Address |
 | -------- | -------- | -------- | -------- | -------- | -------- |
 | <div align="center">12.1.1.4</div> | <div align="center">255.255.255.252</div> | <div align="center">/30</div> | <div align="center">2</div> | <div align="center">12.1.1.5 - 12.1.1.6</div> | <div align="center">12.1.1.7</div> |
 
 > Serial connection using HDLC, 1.544 Mb T1, clock rate at 64,000. (No PPP or CHAP authentication)
+
+### Wireless Access Point Configuration
+
+#### BUR_WAP_1
+
+| SSID | WPA2-PSK | 2.4GHz Channel | Coverage Range (metres): | Encryption Type | 
+| -------- | -------- | -------- | -------- | -------- |
+| BUR_WiFi_1 | Password1 | 6 – 2.437GHz | 250.00 | AES | 
+
+#### BUR_WAP_2
+
+| SSID | WPA2-PSK | 2.4GHz Channel | Coverage Range (metres): | Encryption Type | 
+| -------- | -------- | -------- | -------- | -------- |
+| BUR_WiFi_2 | Password1 | 6 – 2.437GHz | 250.00 | AES | 
+
+### Reload a Cisco switch
+
+1. Access Privileged Mode:
+
+```console
+Main_Switch>enable
+```
+2. Reload the Switch:
+
+```console
+Main_Switch#reload
+Proceed with reload? [confirm]y
+```
+
+2. Reload the Switch:
 
 ### Enter Privileged Exec Mode
 
@@ -190,7 +220,7 @@ Main_Switch(config)#service password-encryption
 1. Enter Global Configuration Mode:
 
 ```console
-BUR_Main_SW#configure terminal
+Main_Switch#configure terminal
 ```
 
 2. Enable Telnet on the VTY Lines:
@@ -249,7 +279,7 @@ Building configuration...
 1. Enter Global Configuration Mode:
 
 ```console
-BUR_Main_SW#configure terminal
+Main_Switch#configure terminal
 ```
 
 2. Create a New User:
