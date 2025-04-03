@@ -74,13 +74,13 @@ This project outlines the network configuration and operations for the College o
 
 | SSID | WPA2-PSK | 2.4GHz Channel | Coverage Range (metres): | Encryption Type | 
 | -------- | -------- | -------- | -------- | -------- |
-| BUR_WiFi_1 | Password1 | 6 – 2.437GHz | 250.00 | AES | 
+| <div align="center">BUR_WiFi_1</div> | <div align="center">Password1</div> | <div align="center">6 – 2.437GHz </div> | <div align="center">250.00</div> | <div align="center">AES</div> | 
 
 #### BUR_WAP_2
 
 | SSID | WPA2-PSK | 2.4GHz Channel | Coverage Range (metres): | Encryption Type | 
 | -------- | -------- | -------- | -------- | -------- |
-| BUR_WiFi_2 | Password1 | 6 – 2.437GHz | 250.00 | AES | 
+| <div align="center">BUR_WiFi_2</div> | <div align="center">Password1</div> | <div align="center">6 – 2.437GHz </div> | <div align="center">250.00</div> | <div align="center">AES</div> | 
 
 ### Reload a Cisco switch
 
