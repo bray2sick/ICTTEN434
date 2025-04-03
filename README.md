@@ -1,7 +1,7 @@
 # Network Configuration and Operations Guide
 
 > [!WARNING]  
-> This project is licensed under the GNU General Public License v3.0, and if you use this in your own work, please disclose your source.
+> This project is licensed under the [GNU General Public License v3.0](https://choosealicense.com/licenses/gpl-3.0/), and if you use this in your own work, please disclose your source.
 > 
 ## Project Overview
 
