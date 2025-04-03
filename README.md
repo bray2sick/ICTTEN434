@@ -18,6 +18,11 @@ This project outlines the network configuration and operations for the College o
 - Switch and Network Device Management
 - IOS Configuration and Version Control
 
+### Internal
+
+| Allocated IP Block | 10.9.0.0/16 | 
+| -------- | -------- |
+
 ### Hobart Campus - LAN
 
 | VLAN Name | VLAN # | Subnet Address | Subnet Mask | CIDR | # of Hosts | Usable Range | Broadcast Address |
@@ -42,6 +47,10 @@ This project outlines the network configuration and operations for the College o
 | BUR_Students | <div align="center">80</div> | <div align="center">10.9.14.0/23</div> | <div align="center">255.255.254.0</div> | <div align="center">/23</div> | <div align="center">510</div> | <div align="center">10.9.14.1 - 10.9.14.254</div> | <div align="center">10.9.14.255</div> |
 | BUR_General | <div align="center">90</div> | <div align="center">10.9.16.0/24</div> | <div align="center">255.255.255.0</div> | <div align="center">/24</div> | <div align="center">254</div> | <div align="center">10.9.16.1 - 10.9.16.254</div> | <div align="center">10.9.16.255</div> |
 
+### External
+
+| Allocated IP Block | 12.2.1.0/24 | 
+| -------- | -------- |
 
 ### Enter Privileged Exec Mode
 
