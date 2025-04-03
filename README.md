@@ -1,4 +1,4 @@
-# Cisco Packet Tracer
+# CTTEN434 Install, configure and test internet protocol networks
 
 ## Project Overview
 
