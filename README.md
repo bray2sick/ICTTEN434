@@ -2,7 +2,7 @@
 
 > [!WARNING]  
 > This project is licensed under the [GNU General Public License v3.0](https://choosealicense.com/licenses/gpl-3.0/), and if you use this in your own work, please disclose your source and include this license if you post it anywhere.
-> 
+
 ## Project Overview
 
 This project outlines the network configuration and operations for the College of Art, Technology, and Science (CATS). The goal is to ensure proper setup, security, and efficient management of the network infrastructure within multiple buildings of the college, facilitating seamless connectivity for students, staff, and general users.
