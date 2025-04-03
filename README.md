@@ -110,7 +110,9 @@ The following DHCP scopes are configured for each server at the Hobart, Launcest
 
 > The DHCP scopes ensure proper IP allocation for devices within the specified VLANs. Each server is responsible for its respective campus, and the maximum number of users per scope is set to prevent DHCP exhaustion.
 
-### Reload a Cisco switch
+### Commands
+
+#### Reload a Cisco switch
 
 1. Access Privileged Mode:
 
@@ -126,7 +128,7 @@ Proceed with reload? [confirm]y
 
 2. Reload the Switch:
 
-### Enter Privileged Exec Mode
+#### Enter Privileged Exec Mode
 
 1. Access Privileged Mode:
 
@@ -150,7 +152,7 @@ Main_Switch>
 
 > I partially typed a command and then hit the `Tab` key, which completes the command for me.
 
-### Set the Hostname
+#### Set the Hostname
 
 1. Enter Global Configuration Mode:
 
@@ -199,7 +201,7 @@ Press RETURN to get started!
 Main_Switch says Hello World!
 ```
 
-### Set the Enable Password
+#### Set the Enable Password
 
 1. Enter Global Configuration Mode:
 
@@ -213,7 +215,7 @@ Main_Switch#configure terminal
 Main_Switch(config)#enable secret <password>
 ```
 
-### Set the Console Password
+#### Set the Console Password
 
 1. Enter Global Configuration Mode:
 
@@ -243,7 +245,7 @@ Main_Switch(config-line)#exit
 Main_Switch(config)#service password-encryption
 
 ```
-### Configuring Telnet
+#### Configuring Telnet
 
 1. Enter Global Configuration Mode:
 
@@ -265,7 +267,7 @@ Main_Switch(config-line)#login
 ```
 > To access the switch via Telnet, open Command Prompt, and type telnet `ip address`, replacing `ip address` with the switch's IP address. Enter the password when prompted to gain access.
 
-### Saving the Configuration
+#### Saving the Configuration
 
 1.	To save the current running configuration:
 
@@ -302,7 +304,7 @@ Building configuration...
 
 > Always make sure you save your configurations after making changes to prevent loss of settings after a reboot.
 
-### Adding another User for SSH Access
+#### Adding another User for SSH Access
 
 1. Enter Global Configuration Mode:
 
@@ -324,7 +326,7 @@ Main_Switch(config)#username scott secret cisco
 Main_Switch(config)#ip ssh version 2
 ```
 
-### Checking Interface Status
+#### Checking Interface Status
 
 1. To check the status of interfaces, use:
 
@@ -374,7 +376,7 @@ Vlan1                  10.9.100.10     YES manual up                    up
 
 > Using the `show ip interface brief` command will provide a quick overview of the operational status of all interfaces on the Switch, making it easier to identify issues related to connectivity or interface configurations.
 
-### Creating VLANs
+#### Creating VLANs
 
 1. Enter Global Configuration Mode:
 
@@ -432,4 +434,3 @@ VLAN Name                             Status    Ports
 ```
 
 > By following these steps, you can effectively create and assign VLANs on the switch. To confirm your configuration, always use the `show vlan brief` command to review your VLANs and their assigned ports.
-
