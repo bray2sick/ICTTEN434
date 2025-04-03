@@ -1,5 +1,8 @@
 # Network Configuration and Operations Guide
 
+> [!WARNING]  
+> This project is licensed under the GNU General Public License v3.0, and if you use this in your own work, please disclose your source.
+> 
 ## Project Overview
 
 This project outlines the network configuration and operations for the College of Art, Technology, and Science (CATS). The goal is to ensure proper setup, security, and efficient management of the network infrastructure within multiple buildings of the college, facilitating seamless connectivity for students, staff, and general users.
@@ -58,6 +61,7 @@ This project outlines the network configuration and operations for the College o
 | -------- | -------- | -------- | -------- | -------- | -------- |
 | <div align="center">12.1.1.0</div> | <div align="center">255.255.255.252</div> | <div align="center">/30</div> | <div align="center">2</div> | <div align="center">12.1.1.1 - 12.1.1.2</div> | <div align="center">12.1.1.3</div> |
 
+> [!NOTE] 
 > Serial connection using HDLC, 1.544 Mb T1, clock rate at 64,000. (No PPP or CHAP authentication)
 
 #### Hobart Campus to Burnie Campus
@@ -66,6 +70,7 @@ This project outlines the network configuration and operations for the College o
 | -------- | -------- | -------- | -------- | -------- | -------- |
 | <div align="center">12.1.1.4</div> | <div align="center">255.255.255.252</div> | <div align="center">/30</div> | <div align="center">2</div> | <div align="center">12.1.1.5 - 12.1.1.6</div> | <div align="center">12.1.1.7</div> |
 
+> [!NOTE] 
 > Serial connection using HDLC, 1.544 Mb T1, clock rate at 64,000. (No PPP or CHAP authentication)
 
 ### Wireless Access Point Configuration
@@ -108,6 +113,7 @@ The following DHCP scopes are configured for each server at the Hobart, Launcest
 | Students | <div align="center">80</div> | <div align="center">10.9.14.1</div> | <div align="center">10.9.4.11</div> | <div align="center">10.9.14.50</div> | <div align="center">10.9.14.149</div> | <div align="center">255.255.254.0</div> | <div align="center">100</div> |
 | Staff | <div align="center">70</div> | <div align="center">10.9.12.1</div> | <div align="center">10.9.4.11</div> | <div align="center">10.9.12.50</div> | <div align="center">10.9.12.99</div> | <div align="center">255.255.255.0</div> | <div align="center">50</div> |
 
+> [!NOTE] 
 > The DHCP scopes ensure proper IP allocation for devices within the specified VLANs. Each server is responsible for its respective campus, and the maximum number of users per scope is set to prevent DHCP exhaustion.
 
 ### Commands
@@ -150,6 +156,7 @@ Main_Switch#disable
 Main_Switch>
 ```
 
+> [!NOTE]
 > I partially typed a command and then hit the `Tab` key, which completes the command for me.
 
 #### Set the Hostname
@@ -265,6 +272,8 @@ Main_Switch(config)#line vty 0 4
 Main_Switch(config-line)#password <password>
 Main_Switch(config-line)#login
 ```
+
+> [!NOTE]
 > To access the switch via Telnet, open Command Prompt, and type telnet `ip address`, replacing `ip address` with the switch's IP address. Enter the password when prompted to gain access.
 
 #### Saving the Configuration
@@ -373,7 +382,7 @@ GigabitEthernet0/1     unassigned      YES manual up                    up
 GigabitEthernet0/2     unassigned      YES manual up                    up 
 Vlan1                  10.9.100.10     YES manual up                    up
 ```
-
+> [!TIP]
 > Using the `show ip interface brief` command will provide a quick overview of the operational status of all interfaces on the Switch, making it easier to identify issues related to connectivity or interface configurations.
 
 #### Creating VLANs
@@ -433,4 +442,5 @@ VLAN Name                             Status    Ports
 1004 fddinet-default                  active    
 ```
 
+> [!NOTE]
 > By following these steps, you can effectively create and assign VLANs on the switch. To confirm your configuration, always use the `show vlan brief` command to review your VLANs and their assigned ports.
