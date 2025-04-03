@@ -52,6 +52,22 @@ This project outlines the network configuration and operations for the College o
 | Allocated IP Block | 12.2.1.0/24 | 
 | -------- | -------- |
 
+### Serial WAN Links
+
+### Hobart Campus to Launceston Campus
+
+| Subnet Address | Subnet Mask | CIDR | # of Hosts | Usable Range | Broadcast Address |
+| -------- | -------- | -------- | -------- | -------- | -------- |
+| <div align="center">12.1.1.0</div> | <div align="center">255.255.255.252</div> | <div align="center">/30</div> | <div align="center">2</div> | <div align="center">12.1.1.1 - 12.1.1.2</div> | <div align="center">12.1.1.3</div> |
+
+### Hobart Campus to Burnie Campus
+
+| Subnet Address | Subnet Mask | CIDR | # of Hosts | Usable Range | Broadcast Address |
+| -------- | -------- | -------- | -------- | -------- | -------- |
+| <div align="center">12.1.1.4</div> | <div align="center">255.255.255.252</div> | <div align="center">/30</div> | <div align="center">2</div> | <div align="center">12.1.1.5 - 12.1.1.6</div> | <div align="center">12.1.1.7</div> |
+
+> Serial connection using HDLC, 1.544 Mb T1, clock rate at 64,000. (No PPP or CHAP authentication)
+
 ### Enter Privileged Exec Mode
 
 1. Access Privileged Mode:
