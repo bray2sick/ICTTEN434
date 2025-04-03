@@ -82,6 +82,34 @@ This project outlines the network configuration and operations for the College o
 | -------- | -------- | -------- | -------- | -------- |
 | <div align="center">BUR_WiFi_2</div> | <div align="center">Password1</div> | <div align="center">6 – 2.437GHz </div> | <div align="center">250.00</div> | <div align="center">AES</div> | 
 
+
+### DHCP Configuration
+
+The following DHCP scopes are configured for each server at the Hobart, Launceston, and Burnie campuses, corresponding to their respective VLANs.
+
+#### HBT-Server-1 (Hobart Campus)
+
+| VLAN Name  | VLAN # | Default Gateway | DNS Server  | Start IP Address | End IP Address | Subnet Mask  | Max Users |
+| -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- |
+| Students | <div align="center">20</div> | <div align="center">10.9.2.1</div> | <div align="center">10.9.4.11</div> | <div align="center">10.9.2.50</div> | <div align="center">10.9.2.149</div> | <div align="center">255.255.254.0</div> | <div align="center">100</div> |
+| Staff | <div align="center">10</div> | <div align="center">10.9.0.1</div> | <div align="center">10.9.4.11</div> | <div align="center">10.9.0.50</div> | <div align="center">10.9.0.99</div> | <div align="center">255.255.255.0</div> | <div align="center">50</div> |
+
+#### LAU-Server-1 (Launceston Campus)
+
+| VLAN Name  | VLAN # | Default Gateway | DNS Server  | Start IP Address | End IP Address | Subnet Mask  | Max Users |
+| -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- |
+| Students | <div align="center">50</div> | <div align="center">10.9.8.1</div> | <div align="center">10.9.4.11</div> | <div align="center">10.9.8.50</div> | <div align="center">10.9.8.149</div> | <div align="center">255.255.254.0</div> | <div align="center">100</div> |
+| Staff | <div align="center">40</div> | <div align="center">10.9.6.1</div> | <div align="center">10.9.4.11</div> | <div align="center">10.9.6.50</div> | <div align="center">10.9.6.99</div> | <div align="center">255.255.255.0</div> | <div align="center">50</div> |
+
+#### BUR-Server-1 (Burnie Campus)
+
+| VLAN Name  | VLAN # | Default Gateway | DNS Server  | Start IP Address | End IP Address | Subnet Mask  | Max Users |
+| -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- |
+| Students | <div align="center">80</div> | <div align="center">10.9.14.1</div> | <div align="center">10.9.4.11</div> | <div align="center">10.9.14.50</div> | <div align="center">10.9.14.149</div> | <div align="center">255.255.254.0</div> | <div align="center">100</div> |
+| Staff | <div align="center">70</div> | <div align="center">10.9.12.1</div> | <div align="center">10.9.4.11</div> | <div align="center">10.9.12.50</div> | <div align="center">10.9.12.99</div> | <div align="center">255.255.255.0</div> | <div align="center">50</div> |
+
+> The DHCP scopes ensure proper IP allocation for devices within the specified VLANs. Each server is responsible for its respective campus, and the maximum number of users per scope is set to prevent DHCP exhaustion.
+
 ### Reload a Cisco switch
 
 1. Access Privileged Mode:
@@ -404,3 +432,4 @@ VLAN Name                             Status    Ports
 ```
 
 > By following these steps, you can effectively create and assign VLANs on the switch. To confirm your configuration, always use the `show vlan brief` command to review your VLANs and their assigned ports.
+
