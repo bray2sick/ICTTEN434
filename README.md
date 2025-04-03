@@ -1,4 +1,4 @@
-# ICTTEN434 - Install, configure and test internet protocol networks
+# Network Configuration and Operations Guide
 
 ## Project Overview
 
